@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/CentralPerk.API.props" />
+</Project>
