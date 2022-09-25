@@ -6,10 +6,10 @@ using MediatR;
 
 namespace CentralPerk.API.Application.Queries.GetProductById;
 
-public class GetProductByIdQueryHandler:IRequestHandler<GetProductByIdQuery,ResponseDto<ProductDto>>
+public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, ResponseDto<ProductDto>>
 {
-    private readonly IProductRepository _productRepository;
     private readonly IMapper _mapper;
+    private readonly IProductRepository _productRepository;
 
     public GetProductByIdQueryHandler(IProductRepository productRepository, IMapper mapper)
     {
@@ -19,8 +19,8 @@ public class GetProductByIdQueryHandler:IRequestHandler<GetProductByIdQuery,Resp
 
     public async Task<ResponseDto<ProductDto>> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
     {
-        var result = await _productRepository.GetById(request.Id);
+        var result = await _productRepository.GetById(request);
         var resultDto = _mapper.Map<ProductDto>(result);
-        return ResponseDto<ProductDto>.Success(resultDto,200);
+        return ResponseDto<ProductDto>.Success(resultDto, 200);
     }
 }

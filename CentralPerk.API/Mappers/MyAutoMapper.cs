@@ -5,7 +5,7 @@ using CentralPerk.API.Models;
 
 namespace CentralPerk.API.Mappers;
 
-public class MyAutoMapper:Profile
+public class MyAutoMapper : Profile
 {
     public MyAutoMapper()
     {

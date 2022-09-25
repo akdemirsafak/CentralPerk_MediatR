@@ -4,7 +4,7 @@ using MediatR;
 
 namespace CentralPerk.API.Application.Queries.GetCustomerById;
 
-public class GetCustomerByIdQuery:IRequest<ResponseDto<CustomerDto>>
+public class GetCustomerByIdQuery : IRequest<ResponseDto<CustomerDto>>
 {
     public int Id { get; set; }
 }

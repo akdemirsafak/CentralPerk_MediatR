@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace CentralPerk.API.Validations.Product;
 
-public class GetProductByIdQueryValidator:AbstractValidator<GetProductByIdQuery>
+public class GetProductByIdQueryValidator : AbstractValidator<GetProductByIdQuery>
 {
     public GetProductByIdQueryValidator()
     {

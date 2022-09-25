@@ -6,7 +6,7 @@ using MediatR;
 
 namespace CentralPerk.API.Application.Queries.GetCustomerById;
 
-public class GetCustomerByIdQueryHandler:IRequestHandler<GetCustomerByIdQuery,ResponseDto<CustomerDto>>
+public class GetCustomerByIdQueryHandler : IRequestHandler<GetCustomerByIdQuery, ResponseDto<CustomerDto>>
 {
     private readonly ICustomerRepository _customerRepository;
     private readonly IMapper _mapper;
@@ -17,10 +17,11 @@ public class GetCustomerByIdQueryHandler:IRequestHandler<GetCustomerByIdQuery,Re
         _mapper = mapper;
     }
 
-    public async Task<ResponseDto<CustomerDto>> Handle(GetCustomerByIdQuery request, CancellationToken cancellationToken)
+    public async Task<ResponseDto<CustomerDto>> Handle(GetCustomerByIdQuery request,
+        CancellationToken cancellationToken)
     {
-        var customer = await _customerRepository.GetById(request.Id);
+        var customer = await _customerRepository.GetById(request);
         var customerDto = _mapper.Map<CustomerDto>(customer);
-        return ResponseDto<CustomerDto>.Success(customerDto,200);
+        return ResponseDto<CustomerDto>.Success(customerDto, 200);
     }
 }

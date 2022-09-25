@@ -1,10 +1,9 @@
 using CentralPerk.API.Application.Queries.GetCustomerById;
-using CentralPerk.API.Application.Queries.GetCustomers;
 using FluentValidation;
 
 namespace CentralPerk.API.Validations.Customer;
 
-public class GetCustomerByIdQueryValidator :AbstractValidator<GetCustomerByIdQuery>
+public class GetCustomerByIdQueryValidator : AbstractValidator<GetCustomerByIdQuery>
 {
     public GetCustomerByIdQueryValidator()
     {

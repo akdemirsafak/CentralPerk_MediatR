@@ -4,6 +4,6 @@ using MediatR;
 
 namespace CentralPerk.API.Application.Queries.GetProducts;
 
-public class GetProductsQuery:IRequest<ResponseDto<List<ProductDto>>>
+public class GetProductsQuery : IRequest<ResponseDto<List<ProductDto>>>
 {
 }

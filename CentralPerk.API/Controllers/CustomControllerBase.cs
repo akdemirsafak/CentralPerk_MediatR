@@ -15,6 +15,4 @@ public class CustomControllerBase : ControllerBase
 
         return new ObjectResult(response) { StatusCode = response.StatusCode };
     }
-
-  
 }

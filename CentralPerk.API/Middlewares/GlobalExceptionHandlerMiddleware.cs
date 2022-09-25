@@ -15,7 +15,7 @@ public static class GlobalExceptionHandlerMiddleware
                 var exceptionFeature = context.Features.Get<IExceptionHandlerFeature>();
                 var exception = exceptionFeature.Error;
                 context.Response.StatusCode = 500;
-                await context.Response.WriteAsJsonAsync<ResponseDto<NoContentDto>>(ResponseDto<NoContentDto>.Fail(exception.Message));
+                await context.Response.WriteAsJsonAsync(ResponseDto<NoContentDto>.Fail(exception.Message));
             });
         });
     }

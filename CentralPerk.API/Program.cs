@@ -19,15 +19,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers()
     .AddFluentValidation(x => x.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly()));
 
-builder.Services.Configure<ApiBehaviorOptions>(option =>{ option.SuppressModelStateInvalidFilter = true; });
+builder.Services.Configure<ApiBehaviorOptions>(option => { option.SuppressModelStateInvalidFilter = true; });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IDbConnection>(sp => new NpgsqlConnection(builder.Configuration.GetConnectionString("PostgreSQL")));
+builder.Services.AddScoped<IDbConnection>(sp =>
+    new NpgsqlConnection(builder.Configuration.GetConnectionString("PostgreSQL")));
 builder.Services.AddScoped<UnitOfWork>();
-builder.Services.AddScoped<IDbTransaction>(sp =>
+builder.Services.AddScoped(sp =>
 {
     var connection = sp.GetRequiredService<IDbConnection>();
     connection.Open();

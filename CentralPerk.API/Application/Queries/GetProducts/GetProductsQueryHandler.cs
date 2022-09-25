@@ -6,10 +6,10 @@ using MediatR;
 
 namespace CentralPerk.API.Application.Queries.GetProducts;
 
-public class GetProductsQueryHandler:IRequestHandler<GetProductsQuery,ResponseDto<List<ProductDto>>>
+public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, ResponseDto<List<ProductDto>>>
 {
-    private readonly IProductRepository _productRepository;
     private readonly IMapper _mapper;
+    private readonly IProductRepository _productRepository;
 
     public GetProductsQueryHandler(IProductRepository productRepository, IMapper mapper, IMediator mediator)
     {
@@ -17,11 +17,12 @@ public class GetProductsQueryHandler:IRequestHandler<GetProductsQuery,ResponseDt
         _mapper = mapper;
     }
 
-    public async Task<ResponseDto<List<ProductDto>>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
+    public async Task<ResponseDto<List<ProductDto>>> Handle(GetProductsQuery request,
+        CancellationToken cancellationToken)
     {
-        var result=await _productRepository.GetAll();
+        var result = await _productRepository.GetAll();
         var resultDto = _mapper.Map<List<ProductDto>>(result);
         return ResponseDto<List<ProductDto>>.Success(
-        resultDto,200);
+            resultDto, 200);
     }
 }
