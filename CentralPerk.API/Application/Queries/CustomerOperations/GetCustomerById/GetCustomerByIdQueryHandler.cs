@@ -2,11 +2,10 @@ using AutoMapper;
 using CentralPerk.API.Dtos;
 using CentralPerk.API.Dtos.Customer;
 using CentralPerk.API.RepositoryCore;
-using MediatR;
 
-namespace CentralPerk.API.Application.Queries.GetCustomerById;
+namespace CentralPerk.API.Application.Queries.CustomerOperations.GetCustomerById;
 
-public class GetCustomerByIdQueryHandler : IRequestHandler<GetCustomerByIdQuery, ResponseDto<CustomerDto>>
+public class GetCustomerByIdQueryHandler : IQueryHandler<GetCustomerByIdQuery, ResponseDto<CustomerDto>>
 {
     private readonly ICustomerRepository _customerRepository;
     private readonly IMapper _mapper;

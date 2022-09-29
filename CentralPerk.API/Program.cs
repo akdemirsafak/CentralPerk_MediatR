@@ -4,8 +4,6 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CentralPerk.API.DependencyResolver;
 using CentralPerk.API.Middlewares;
-using CentralPerk.API.Repository;
-using CentralPerk.API.RepositoryCore;
 using CentralPerk.API.UnitOfWorks;
 using FluentValidation.AspNetCore;
 using MediatR;
@@ -42,8 +40,6 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
     containerBuilder.RegisterModule(new AutoFacResolver())); //AutoFac
 
-builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

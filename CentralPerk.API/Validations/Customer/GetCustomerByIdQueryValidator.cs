@@ -1,4 +1,4 @@
-using CentralPerk.API.Application.Queries.GetCustomerById;
+using CentralPerk.API.Application.Queries.CustomerOperations.GetCustomerById;
 using FluentValidation;
 
 namespace CentralPerk.API.Validations.Customer;

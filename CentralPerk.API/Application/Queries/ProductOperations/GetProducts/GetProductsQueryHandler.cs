@@ -4,9 +4,9 @@ using CentralPerk.API.Dtos.Product;
 using CentralPerk.API.RepositoryCore;
 using MediatR;
 
-namespace CentralPerk.API.Application.Queries.GetProducts;
+namespace CentralPerk.API.Application.Queries.ProductOperations.GetProducts;
 
-public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, ResponseDto<List<ProductDto>>>
+public class GetProductsQueryHandler : IQueryHandler<GetProductsQuery, ResponseDto<List<ProductDto>>>
 {
     private readonly IMapper _mapper;
     private readonly IProductRepository _productRepository;

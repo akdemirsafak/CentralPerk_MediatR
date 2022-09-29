@@ -1,9 +1,8 @@
 using CentralPerk.API.Dtos;
-using MediatR;
 
-namespace CentralPerk.API.Application.Commands.UpdateCustomer;
+namespace CentralPerk.API.Application.Commands.CustomerOperations.UpdateCustomer;
 
-public class UpdateCustomerCommand : IRequest<ResponseDto<NoContentDto>>
+public class UpdateCustomerCommand : ICommand<ResponseDto<NoContentDto>>
 {
     public int Id { get; set; }
     public string FirstName { get; set; }

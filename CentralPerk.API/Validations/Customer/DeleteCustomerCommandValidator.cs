@@ -1,4 +1,4 @@
-using CentralPerk.API.Application.Commands.DeleteCustomer;
+using CentralPerk.API.Application.Commands.CustomerOperations.DeleteCustomer;
 using FluentValidation;
 
 namespace CentralPerk.API.Validations.Customer;

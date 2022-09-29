@@ -1,11 +1,10 @@
 using CentralPerk.API.Dtos;
 using CentralPerk.API.RepositoryCore;
-using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace CentralPerk.API.Application.Commands.DeleteCustomer;
+namespace CentralPerk.API.Application.Commands.CustomerOperations.DeleteCustomer;
 
-public class DeleteCustomerCommandHandler : IRequestHandler<DeleteCustomerCommand, ResponseDto<NoContent>>
+public class DeleteCustomerCommandHandler : ICommandHandler<DeleteCustomerCommand, ResponseDto<NoContent>>
 {
     private readonly ICustomerRepository _customerRepository;
 

@@ -1,8 +1,8 @@
-using CentralPerk.API.Application.Commands.CreateCustomer;
-using CentralPerk.API.Application.Commands.DeleteCustomer;
-using CentralPerk.API.Application.Commands.UpdateCustomer;
-using CentralPerk.API.Application.Queries.GetCustomerById;
-using CentralPerk.API.Application.Queries.GetCustomers;
+using CentralPerk.API.Application.Commands.CustomerOperations.CreateCustomer;
+using CentralPerk.API.Application.Commands.CustomerOperations.DeleteCustomer;
+using CentralPerk.API.Application.Commands.CustomerOperations.UpdateCustomer;
+using CentralPerk.API.Application.Queries.CustomerOperations.GetCustomerById;
+using CentralPerk.API.Application.Queries.CustomerOperations.GetCustomers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

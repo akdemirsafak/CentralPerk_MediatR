@@ -1,4 +1,4 @@
-using CentralPerk.API.Application.Commands.UpdateCustomer;
+using CentralPerk.API.Application.Commands.CustomerOperations.UpdateCustomer;
 using FluentValidation;
 
 namespace CentralPerk.API.Validations.Customer;

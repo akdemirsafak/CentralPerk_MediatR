@@ -2,11 +2,10 @@ using AutoMapper;
 using CentralPerk.API.Dtos;
 using CentralPerk.API.Dtos.Product;
 using CentralPerk.API.RepositoryCore;
-using MediatR;
 
-namespace CentralPerk.API.Application.Queries.GetProductById;
+namespace CentralPerk.API.Application.Queries.ProductOperations.GetProductById;
 
-public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, ResponseDto<ProductDto>>
+public class GetProductByIdQueryHandler : IQueryHandler<GetProductByIdQuery, ResponseDto<ProductDto>>
 {
     private readonly IMapper _mapper;
     private readonly IProductRepository _productRepository;

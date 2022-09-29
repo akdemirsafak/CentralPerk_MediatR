@@ -1,8 +1,8 @@
 using System.Data;
-using CentralPerk.API.Application.Commands.CreateCustomer;
-using CentralPerk.API.Application.Commands.DeleteCustomer;
-using CentralPerk.API.Application.Commands.UpdateCustomer;
-using CentralPerk.API.Application.Queries.GetCustomerById;
+using CentralPerk.API.Application.Commands.CustomerOperations.CreateCustomer;
+using CentralPerk.API.Application.Commands.CustomerOperations.DeleteCustomer;
+using CentralPerk.API.Application.Commands.CustomerOperations.UpdateCustomer;
+using CentralPerk.API.Application.Queries.CustomerOperations.GetCustomerById;
 using CentralPerk.API.Models;
 using CentralPerk.API.RepositoryCore;
 using Dapper;
@@ -37,12 +37,12 @@ public class CustomerRepository : BaseRepository, ICustomerRepository
         return id;
     }
 
-    public async Task<bool> Update(UpdateCustomerCommand command)
+    public async Task<int> Update(UpdateCustomerCommand command)
     {
         var cmd = "Select func_customer_update(@id,@firstname,@lastname,@phonenumber)";
         var result = await _dbConnection.ExecuteScalarAsync<int>(cmd, command, _dbTransaction);
         _dbTransaction.Commit();
-        return result > 0;
+        return result;
     }
 
     public async Task<int> Delete(DeleteCustomerCommand command)

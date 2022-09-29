@@ -1,4 +1,4 @@
-using CentralPerk.API.Application.Commands.CreateCustomer;
+using CentralPerk.API.Application.Commands.CustomerOperations.CreateCustomer;
 using FluentValidation;
 
 namespace CentralPerk.API.Validations.Customer;

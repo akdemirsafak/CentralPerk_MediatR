@@ -1,5 +1,8 @@
-using CentralPerk.API.Application.Queries.GetProductById;
-using CentralPerk.API.Application.Queries.GetProducts;
+using CentralPerk.API.Application.Commands.ProductOperations.CreateProduct;
+using CentralPerk.API.Application.Commands.ProductOperations.DeleteProduct;
+using CentralPerk.API.Application.Commands.ProductOperations.UpdateProduct;
+using CentralPerk.API.Application.Queries.ProductOperations.GetProductById;
+using CentralPerk.API.Application.Queries.ProductOperations.GetProducts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,8 +24,26 @@ public class ProductController : CustomControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
+    public async Task<IActionResult> GetById([FromRoute] int id)
     {
         return CreateActionResult(await _mediatr.Send(new GetProductByIdQuery { Id = id }));
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(CreateProductCommand command)
+    {
+        return CreateActionResult(await _mediatr.Send(command));
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> Update(UpdateProductCommand command)
+    {
+        return CreateActionResult(await _mediatr.Send(command));
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete([FromRoute] int id)
+    {
+        return CreateActionResult(await _mediatr.Send(new DeleteProductCommand { Id = id }));
     }
 }
