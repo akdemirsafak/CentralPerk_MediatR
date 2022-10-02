@@ -8,6 +8,7 @@ public class GetCustomerByIdQueryValidator : AbstractValidator<GetCustomerByIdQu
     public GetCustomerByIdQueryValidator()
     {
         RuleFor(x => x.Id)
+            .NotNull().WithMessage("{PropertyName} is required.")
             .GreaterThan(0).WithMessage("{PropertyName} is must be greater than zero.");
     }
 }

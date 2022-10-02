@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Lh5BtsafpSkB8MSpbQAPYzESTInQbEc0pJMjxT1/pPgeEuEru1MnjdZO2AUV6PBpJH/QqPXZljQ6esS/wFwpWA==",
+  "dgSpecHash": "Q64Iqs5mR0TAVmZmTNV4923VVPGZIump5x5vW9D2xo/VS2GunDKMW0+UDM5mUtyi9sfbDc12WS8xN7KhbRA7Mg==",
   "success": true,
   "projectFilePath": "/Users/akdemirsafak/Desktop/NetCore/CentralPerk/CentralPerk.API/CentralPerk.API.csproj",
   "expectedPackageFiles": [
@@ -9,9 +9,9 @@
     "/Users/akdemirsafak/.nuget/packages/automapper/11.0.1/automapper.11.0.1.nupkg.sha512",
     "/Users/akdemirsafak/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "/Users/akdemirsafak/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
-    "/Users/akdemirsafak/.nuget/packages/fluentvalidation/11.2.1/fluentvalidation.11.2.1.nupkg.sha512",
+    "/Users/akdemirsafak/.nuget/packages/fluentvalidation/11.2.2/fluentvalidation.11.2.2.nupkg.sha512",
     "/Users/akdemirsafak/.nuget/packages/fluentvalidation.aspnetcore/11.2.2/fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
-    "/Users/akdemirsafak/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.2.1/fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
+    "/Users/akdemirsafak/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.2.2/fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
     "/Users/akdemirsafak/.nuget/packages/mediatr/10.0.1/mediatr.10.0.1.nupkg.sha512",
     "/Users/akdemirsafak/.nuget/packages/mediatr.contracts/1.0.1/mediatr.contracts.1.0.1.nupkg.sha512",
     "/Users/akdemirsafak/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/10.0.1/mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",

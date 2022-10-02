@@ -22,7 +22,6 @@ public class GetProductsQueryHandler : IQueryHandler<GetProductsQuery, ResponseD
     {
         var result = await _productRepository.GetAll();
         var resultDto = _mapper.Map<List<ProductDto>>(result);
-        return ResponseDto<List<ProductDto>>.Success(
-            resultDto, 200);
+        return ResponseDto<List<ProductDto>>.Success(resultDto, 200);
     }
 }

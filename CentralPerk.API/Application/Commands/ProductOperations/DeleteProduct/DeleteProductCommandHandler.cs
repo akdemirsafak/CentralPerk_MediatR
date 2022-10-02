@@ -15,7 +15,8 @@ public class DeleteProductCommandHandler : ICommandHandler<DeleteProductCommand,
     public async Task<ResponseDto<NoContentDto>> Handle(DeleteProductCommand request,
         CancellationToken cancellationToken)
     {
-        var response = await _productRepository.Delete(request);
-        return ResponseDto<NoContentDto>.Success(204);
+        var result = await _productRepository.Delete(request);
+        if (result > 0) return ResponseDto<NoContentDto>.Success(204);
+        return ResponseDto<NoContentDto>.Fail("Kayıt silinemedi.", 500);
     }
 }

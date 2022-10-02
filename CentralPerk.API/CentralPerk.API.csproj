@@ -7,25 +7,26 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Autofac" Version="6.4.0" />
-        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
-        <PackageReference Include="AutoMapper" Version="11.0.1" />
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-        <PackageReference Include="Dapper" Version="2.0.123" />
-        <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
-        <PackageReference Include="MediatR" Version="10.0.1" />
-        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0-rc.1.22427.2" />
-        <PackageReference Include="Microsoft.AspNetCore.RateLimiting" Version="7.0.0-rc.1.22427.2" />
-        <PackageReference Include="Npgsql" Version="7.0.0-rc.1" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="Autofac" Version="6.4.0"/>
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0"/>
+        <PackageReference Include="AutoMapper" Version="11.0.1"/>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0"/>
+        <PackageReference Include="Dapper" Version="2.0.123"/>
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2"/>
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.2"/>
+        <PackageReference Include="MediatR" Version="10.0.1"/>
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0-rc.1.22427.2"/>
+        <PackageReference Include="Microsoft.AspNetCore.RateLimiting" Version="7.0.0-rc.1.22427.2"/>
+        <PackageReference Include="Npgsql" Version="7.0.0-rc.1"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Application\Commands\CustomerOperations" />
-        <Folder Include="Application\Commands\ProductOperations" />
-        <Folder Include="Application\Queries\CustomerOperations" />
-        <Folder Include="Application\Queries\ProductOperations" />
+        <Folder Include="Application\Commands\CustomerOperations"/>
+        <Folder Include="Application\Commands\ProductOperations"/>
+        <Folder Include="Application\Queries\CustomerOperations"/>
+        <Folder Include="Application\Queries\ProductOperations"/>
     </ItemGroup>
 
 </Project>

@@ -19,6 +19,8 @@ public class GetProductByIdQueryHandler : IQueryHandler<GetProductByIdQuery, Res
     public async Task<ResponseDto<ProductDto>> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
     {
         var result = await _productRepository.GetById(request);
+        if (result == null) return ResponseDto<ProductDto>.Fail("Kayıt bulunamadı.", 404);
+
         var resultDto = _mapper.Map<ProductDto>(result);
         return ResponseDto<ProductDto>.Success(resultDto, 200);
     }

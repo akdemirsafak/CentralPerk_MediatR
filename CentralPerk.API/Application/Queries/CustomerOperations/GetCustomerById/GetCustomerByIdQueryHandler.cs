@@ -20,6 +20,7 @@ public class GetCustomerByIdQueryHandler : IQueryHandler<GetCustomerByIdQuery, R
         CancellationToken cancellationToken)
     {
         var customer = await _customerRepository.GetById(request);
+        if (customer == null) return ResponseDto<CustomerDto>.Fail("Kayıt bulunamadı.", 404);
         var customerDto = _mapper.Map<CustomerDto>(customer);
         return ResponseDto<CustomerDto>.Success(customerDto, 200);
     }

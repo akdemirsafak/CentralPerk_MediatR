@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Diagnostics;
 
 namespace CentralPerk.API.Middlewares;
 
-public static class GlobalExceptionHandlerMiddleware
+public static class UseCustomExceptionHandler
 {
-    public static void UseGlobalExceptionMiddleware(this IApplicationBuilder app)
+    public static void UseCustomException(this IApplicationBuilder app)
     {
         app.UseExceptionHandler(options =>
         {

@@ -8,6 +8,7 @@ public class GetProductByIdQueryValidator : AbstractValidator<GetProductByIdQuer
     public GetProductByIdQueryValidator()
     {
         RuleFor(x => x.Id)
+            .NotNull().WithMessage("{PropertyName} is required.")
             .GreaterThan(0).WithMessage("{PropertyName} is must be greater than zero");
     }
 }

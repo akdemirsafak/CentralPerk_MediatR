@@ -26,7 +26,7 @@ public class ProductRepository : BaseRepository, IProductRepository
     public async Task<Product> GetById(GetProductByIdQuery query)
     {
         var sql = "Select * from products where id = @id";
-        return await _dbConnection.QuerySingleAsync<Product>(sql, query);
+        return await _dbConnection.QuerySingleOrDefaultAsync<Product>(sql, query);
     }
 
     public async Task<int> Create(CreateProductCommand command)
@@ -47,7 +47,7 @@ public class ProductRepository : BaseRepository, IProductRepository
 
     public async Task<int> Delete(DeleteProductCommand command)
     {
-        var cmd = "delete from products where id = @id";
+        var cmd = "select func_product_delete(@id)";
         var result = await _dbConnection.ExecuteScalarAsync<int>(cmd, command, _dbTransaction);
         _dbTransaction.Commit();
         return result;

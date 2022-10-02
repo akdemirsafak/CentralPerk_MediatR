@@ -3,6 +3,7 @@ using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CentralPerk.API.DependencyResolver;
+using CentralPerk.API.Filters;
 using CentralPerk.API.Middlewares;
 using CentralPerk.API.UnitOfWorks;
 using FluentValidation.AspNetCore;
@@ -12,14 +13,13 @@ using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers()
+builder.Services.AddControllers(opt =>
+    {
+        opt.Filters.Add(new ValidationFilter()); //Validate Filter Activated
+    })
     .AddFluentValidation(x => x.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly()));
-
 builder.Services.Configure<ApiBehaviorOptions>(option => { option.SuppressModelStateInvalidFilter = true; });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -40,18 +40,17 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
     containerBuilder.RegisterModule(new AutoFacResolver())); //AutoFac
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-
-app.UseGlobalExceptionMiddleware();
+app.UseCustomException();
 
 app.UseHttpsRedirection();
 

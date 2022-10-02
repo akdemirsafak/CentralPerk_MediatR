@@ -21,6 +21,6 @@ public class CreateCustomerCommandHandler : ICommandHandler<CreateCustomerComman
 
         var result = await _customerRepository.Create(request);
         if (result > 0) return ResponseDto<int>.Success(result, 201);
-        return ResponseDto<int>.Fail("İşlem başarısız.", 500);
+        return ResponseDto<int>.Fail("Kayıt başarısız", 500);
     }
 }
